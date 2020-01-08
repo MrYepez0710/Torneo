@@ -25,4 +25,9 @@ public class EquipoService {
         return equipoDao.listarEquiposPorTorneo(id);
     }
 	
+	public List<Equipo> listarEquipos(){
+		System.out.println("EquipoService::listarEquipoPorTorneo");
+        return equipoDao.findAll();
+    }
+	
 }

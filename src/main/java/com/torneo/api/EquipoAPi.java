@@ -47,4 +47,16 @@ public class EquipoAPi {
 	    return listadoEquiposRespopnse;
 	}
 	
+	@RequestMapping(value="/listaEquipos", method=RequestMethod.GET)
+	public List<EquipoResponse> listarEquipos(){
+		System.out.println("EquipoAPi::listarEquiposPorTorneo");
+	    List<Equipo> listadoEquipos = equipoService.listarEquipos();
+	    
+	    List<EquipoResponse> listadoEquiposRespopnse = new ArrayList<>();
+	    for(Equipo e : listadoEquipos) {
+	    	listadoEquiposRespopnse.add(mapper.map(e, EquipoResponse.class));
+	    }
+	    return listadoEquiposRespopnse;
+	}
+	
 }
