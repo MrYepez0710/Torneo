@@ -20,17 +20,6 @@ import com.torneo.service.TorneoService;
 @RestController
 public class TorneoApi {
 	
-	@RequestMapping(value="/product", method=RequestMethod.GET)
-	public String HolaTorneo() {
-		return "Hola Mundo desde Torneo!";
-	}
-	
-	@RequestMapping(value="/", method=RequestMethod.GET)
-	public String LOLTorneo() {
-		System.out.println("TorneoApi::LOLTorneo");
-		return "LOL desde Torneo!";
-	}
-	
 	@Autowired
 	private TorneoService torneoService;
 	

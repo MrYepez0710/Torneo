@@ -1,12 +1,27 @@
 package com.torneo.dto;
 
-public class Equipo {
+import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Equipo implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5301152808467610342L;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
     private String nombreEquipo;
     private String jugador;
     private byte[]escudo;
     private int idTorneo;
+    
 	public int getId() {
 		return id;
 	}

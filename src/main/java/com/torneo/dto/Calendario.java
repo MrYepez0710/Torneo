@@ -1,10 +1,22 @@
 package com.torneo.dto;
 
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+
 import org.springframework.data.annotation.Id;
 
-public class Calendario {
+@Entity
+public class Calendario implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -28940952690683895L;
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
     private String nroFecha;
     private int equipoLocal;
@@ -12,6 +24,7 @@ public class Calendario {
     private int resultadoLocal;
     private int resultadoVisitante;
     private int idTorneo;
+    
 	public int getId() {
 		return id;
 	}
