@@ -19,7 +19,7 @@ public class Jugador implements Serializable{
 	private int id;
     private String nombre;
     private String usuario;
-    private String contraseña;
+    private String password;
     
 	public int getId() {
 		return id;
@@ -39,10 +39,10 @@ public class Jugador implements Serializable{
 	public void setUsuario(String usuario) {
 		this.usuario = usuario;
 	}
-	public String getContraseña() {
-		return contraseña;
+	public String getPassword() {
+		return password;
 	}
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 }

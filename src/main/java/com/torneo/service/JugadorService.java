@@ -20,7 +20,7 @@ public class JugadorService {
 	public Jugador ingresoJugador(Jugador dto) {
 		System.out.println("JugadorService::ingresoJugador");
 		Jugador player = jugadorDao.consultarJugador(dto.getUsuario());
-		if(player.getContraseña().equals(dto.getContraseña()))
+		if(player.getPassword().equals(dto.getPassword()))
 			return player;
 		else
 			return null;
