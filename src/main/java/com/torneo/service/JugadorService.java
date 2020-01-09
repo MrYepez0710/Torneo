@@ -1,5 +1,6 @@
 package com.torneo.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.torneo.dao.JugadorDAO;
@@ -8,6 +9,7 @@ import com.torneo.dto.Jugador;
 @Service
 public class JugadorService {
 
+	@Autowired
 	private JugadorDAO jugadorDao;
 	
 	public Jugador registrarJugador(Jugador dto) {
