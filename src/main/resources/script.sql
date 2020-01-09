@@ -116,13 +116,19 @@ ALTER TABLE participante ADD CONSTRAINT participantes_jugador_fk FOREIGN KEY ( j
 ALTER TABLE torneo ADD CONSTRAINT torneo_tipotorneo_fk FOREIGN KEY ( tipotorneo )REFERENCES tipotorneo ( id );
 
 ------------------------ SCRIPT PARA HEROKU ------------------------
-CREATE TABLE calendario (id SERIAL PRIMARY KEY,nrofecha VARCHAR2(50) NOT NULL, equipolocal INTEGER NOT NULL,equipovisitante INTEGER NOT NULL, resultadolocal INTEGER NOT NULL, resultadovisitante  INTEGER NOT NULL,idtorneo INTEGER NOT NULL);
-CREATE TABLE equipo (id SERIAL PRIMARY KEY,nombre  VARCHAR2(50) NOT NULL, escudo  CHAR(2048 BYTE));
-CREATE TABLE jugador (id SERIAL PRIMARY KEY,nombre VARCHAR2(50) NOT NULL, usuario VARCHAR2(50) NOT NULL, contraseña  VARCHAR2(20) NOT NULL);
-CREATE TABLE participante (id SERIAL PRIMARY KEY, equipo INTEGER NOT NULL, jugador INTEGER NOT NULL, idtorneo  INTEGER NOT NULL);
-CREATE TABLE tipotorneo (id SERIAL PRIMARY KEY, nombre VARCHAR2(100) NOT NULL, descripcion  VARCHAR2(150) NOT NULL);
-CREATE TABLE torneo (id SERIAL PRIMARY KEY,nombretorneo VARCHAR2(50) NOT NULL, tipotorneo INTEGER NOT NULL, cantidadequipos  INTEGER NOT NULL);
+DROP TABLE IF EXISTS calendario;
+DROP TABLE IF EXISTS participante;
+DROP TABLE IF EXISTS Torneo;
+DROP TABLE IF EXISTS Equipo;
+DROP TABLE IF EXISTS Jugador;
+DROP TABLE IF EXISTS tipotorneo;
 
+CREATE TABLE calendario (id SERIAL PRIMARY KEY,nrofecha VARCHAR(50) NOT NULL, equipolocal INTEGER NOT NULL,equipovisitante INTEGER NOT NULL, resultadolocal INTEGER NOT NULL, resultadovisitante  INTEGER NOT NULL,idtorneo INTEGER NOT NULL);
+CREATE TABLE equipo (id SERIAL PRIMARY KEY,nombre  VARCHAR(50) NOT NULL, escudo  CHAR(4096));
+CREATE TABLE jugador (id SERIAL PRIMARY KEY,nombre VARCHAR(50) NOT NULL, usuario VARCHAR(50) NOT NULL, contraseña  VARCHAR(20) NOT NULL);
+CREATE TABLE participante (id SERIAL PRIMARY KEY, equipo INTEGER NOT NULL, jugador INTEGER NOT NULL, idtorneo  INTEGER NOT NULL);
+CREATE TABLE tipotorneo (id SERIAL PRIMARY KEY, nombre VARCHAR(100) NOT NULL, descripcion  VARCHAR(150) NOT NULL);
+CREATE TABLE torneo (id SERIAL PRIMARY KEY,nombretorneo VARCHAR(50) NOT NULL, tipotorneo INTEGER NOT NULL, cantidadequipos  INTEGER NOT NULL);
 ALTER TABLE calendario ADD CONSTRAINT calendario_equipos_fk FOREIGN KEY ( equipolocal )REFERENCES participante ( id );
 ALTER TABLE calendario ADD CONSTRAINT calendario_equipos_fkv2 FOREIGN KEY ( equipovisitante )REFERENCES participante ( id );
 ALTER TABLE calendario ADD CONSTRAINT calendario_torneo_fk FOREIGN KEY ( idtorneo )REFERENCES torneo ( id );
@@ -130,3 +136,4 @@ ALTER TABLE participante ADD CONSTRAINT equipos_torneo_fk FOREIGN KEY ( idtorneo
 ALTER TABLE participante ADD CONSTRAINT participantes_equipo_fk FOREIGN KEY ( equipo )REFERENCES equipo ( id );
 ALTER TABLE participante ADD CONSTRAINT participantes_jugador_fk FOREIGN KEY ( jugador )REFERENCES jugador ( id );
 ALTER TABLE torneo ADD CONSTRAINT torneo_tipotorneo_fk FOREIGN KEY ( tipotorneo )REFERENCES tipotorneo ( id );
+
