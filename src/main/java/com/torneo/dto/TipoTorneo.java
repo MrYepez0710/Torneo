@@ -17,7 +17,7 @@ public class TipoTorneo implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-    private String nombreTorneo;
+    private String nombre;
     private String descripcion;
     
 	public int getId() {
@@ -26,11 +26,11 @@ public class TipoTorneo implements Serializable{
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getNombreTorneo() {
-		return nombreTorneo;
+	public String getNombre() {
+		return nombre;
 	}
-	public void setNombreTorneo(String nombreTorneo) {
-		this.nombreTorneo = nombreTorneo;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 	public String getDescripcion() {
 		return descripcion;
@@ -38,5 +38,4 @@ public class TipoTorneo implements Serializable{
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-
 }

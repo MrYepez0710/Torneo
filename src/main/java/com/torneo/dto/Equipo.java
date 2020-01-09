@@ -8,7 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Equipos implements Serializable{
+public class Equipo implements Serializable{
 
 	/**
 	 * 
@@ -17,10 +17,8 @@ public class Equipos implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-    private String nombreEquipo;
-    private String jugador;
+    private String nombre;
     private byte[]escudo;
-    private int idTorneo;
     
 	public int getId() {
 		return id;
@@ -28,17 +26,11 @@ public class Equipos implements Serializable{
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getNombreEquipo() {
-		return nombreEquipo;
+	public String getNombre() {
+		return nombre;
 	}
-	public void setNombreEquipo(String nombreEquipo) {
-		this.nombreEquipo = nombreEquipo;
-	}
-	public String getJugador() {
-		return jugador;
-	}
-	public void setJugador(String jugador) {
-		this.jugador = jugador;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 	public byte[] getEscudo() {
 		return escudo;
@@ -46,11 +38,4 @@ public class Equipos implements Serializable{
 	public void setEscudo(byte[] escudo) {
 		this.escudo = escudo;
 	}
-	public int getIdTorneo() {
-		return idTorneo;
-	}
-	public void setIdTorneo(int idTorneo) {
-		this.idTorneo = idTorneo;
-	}
-	
 }

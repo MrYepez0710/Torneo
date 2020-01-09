@@ -1,10 +1,10 @@
 package com.torneo.http;
 
-public class EquipoRequest{
-
+public class TipoTorneoResponse {
+	
 	private int id;
     private String nombre;
-    private byte[]escudo;
+    private String descripcion;
     
 	public int getId() {
 		return id;
@@ -18,10 +18,10 @@ public class EquipoRequest{
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public byte[] getEscudo() {
-		return escudo;
+	public String getDescripcion() {
+		return descripcion;
 	}
-	public void setEscudo(byte[] escudo) {
-		this.escudo = escudo;
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 }
