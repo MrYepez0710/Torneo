@@ -4,6 +4,7 @@ import javax.validation.Valid;
 
 import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,7 +15,9 @@ import com.torneo.http.JugadorRequest;
 import com.torneo.http.JugadorResponse;
 import com.torneo.service.JugadorService;
 
+
 @RestController
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
 public class JugadorApi {
 	
 	@Autowired
