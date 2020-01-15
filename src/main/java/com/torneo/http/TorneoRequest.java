@@ -18,6 +18,8 @@ public class TorneoRequest {
 	@NotNull(message="El campo cantidadEquipos es requerido")
     private int cantidadEquipos;
 	
+	private int estado;
+	
     public int getId() {
 		return id;
 	}
@@ -49,5 +51,13 @@ public class TorneoRequest {
     public void setCantidadEquipos(int cantidadEquipos) {
 		this.cantidadEquipos = cantidadEquipos;
 	}
-	
+
+	public int getEstado() {
+		return estado;
+	}
+
+	public void setEstado(int estado) {
+		this.estado = estado;
+	}
+    
 }

@@ -6,6 +6,7 @@ public class TorneoResponse {
     private String nombreTorneo;
     private int tipoTorneo;
     private int cantidadEquipos;
+    private int estado;
 	
     public int getId() {
 		return id;
@@ -37,6 +38,14 @@ public class TorneoResponse {
 	
     public void setCantidadEquipos(int cantidadEquipos) {
 		this.cantidadEquipos = cantidadEquipos;
+	}
+
+	public int getEstado() {
+		return estado;
+	}
+
+	public void setEstado(int estado) {
+		this.estado = estado;
 	}
 	
 }

@@ -20,6 +20,7 @@ public class Torneo implements Serializable {
     private String nombreTorneo;
     private int tipoTorneo;
     private int cantidadEquipos;
+    private int estado;
 	
     public int getId() {
 		return id;
@@ -52,5 +53,14 @@ public class Torneo implements Serializable {
     public void setCantidadEquipos(int cantidadEquipos) {
 		this.cantidadEquipos = cantidadEquipos;
 	}
+
+	public int getEstado() {
+		return estado;
+	}
+
+	public void setEstado(int estado) {
+		this.estado = estado;
+	}
+    
 	
 }
