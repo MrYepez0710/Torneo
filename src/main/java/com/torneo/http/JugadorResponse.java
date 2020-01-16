@@ -6,6 +6,7 @@ public class JugadorResponse {
     private String nombre;
     private String usuario;
     private String password;
+    private int rol;
     
 	public int getId() {
 		return id;
@@ -31,4 +32,11 @@ public class JugadorResponse {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public int getRol() {
+		return rol;
+	}
+	public void setRol(int rol) {
+		this.rol = rol;
+	}
+	
 }

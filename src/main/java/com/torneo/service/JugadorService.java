@@ -1,5 +1,7 @@
 package com.torneo.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +26,11 @@ public class JugadorService {
 			return player;
 		else
 			return null;
+	}
+	
+	public List<Jugador> listarJugadores(){
+		System.out.println("JugadorService::listarJugadores");
+		return jugadorDao.findAll();
 	}
 	
 }

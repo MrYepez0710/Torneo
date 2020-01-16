@@ -20,6 +20,7 @@ public class Jugador implements Serializable{
     private String nombre;
     private String usuario;
     private String password;
+    private int rol;
     
 	public int getId() {
 		return id;
@@ -45,4 +46,11 @@ public class Jugador implements Serializable{
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public int getRol() {
+		return rol;
+	}
+	public void setRol(int rol) {
+		this.rol = rol;
+	}
+	
 }

@@ -1,5 +1,8 @@
 package com.torneo.api;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.dozer.Mapper;
@@ -11,8 +14,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.torneo.dto.Jugador;
+import com.torneo.dto.TipoTorneo;
 import com.torneo.http.JugadorRequest;
 import com.torneo.http.JugadorResponse;
+import com.torneo.http.TipoTorneoResponse;
 import com.torneo.service.JugadorService;
 
 
@@ -38,6 +43,19 @@ public class JugadorApi {
 		System.out.println("JugadorApi::ingresoJugador");
 		Jugador player = jugadorService.ingresoJugador(mapper.map(torneoRequest, Jugador.class)); 
 		return mapper.map(player, JugadorResponse.class);
+	}
+	
+	@RequestMapping(value="/listarJugadores", method=RequestMethod.POST)
+	public List<JugadorResponse> listarJugadores(){
+		System.out.println("JugadorApi::ingresoJugador");
+		List<Jugador> jugadores = jugadorService.listarJugadores(); 
+		
+		List<JugadorResponse>listadoJugadoresResponse = new ArrayList<>();
+		for(Jugador player : jugadores) {
+			listadoJugadoresResponse.add(mapper.map(player, JugadorResponse.class));
+		}
+		
+		return listadoJugadoresResponse;
 	}
 
 }
