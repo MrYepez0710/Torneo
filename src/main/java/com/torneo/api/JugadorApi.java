@@ -58,4 +58,9 @@ public class JugadorApi {
 		return listadoJugadoresResponse;
 	}
 
+	@RequestMapping(value="/hwJUgadorApi", method=RequestMethod.GET)
+	public String holamundo(){
+		return "Hola MUndo Desde JugadorApi";
+	}
+	
 }
