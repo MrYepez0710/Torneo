@@ -26,7 +26,7 @@ public class EquipoAPi {
 	@Autowired
 	private Mapper mapper;
 	
-	@RequestMapping(value="/NuevoEquipoTorneo", method=RequestMethod.POST)
+	@RequestMapping(value="/NuevoEquipo", method=RequestMethod.POST)
 	public EquipoResponse registrarEquipoEnTorneo(@RequestBody @Valid EquipoRequest equipoRequest){
 		System.out.println("EquipoAPi::registrarEquipoEnTorneo");
 		Equipo equipo = mapper.map(equipoRequest, Equipo.class);

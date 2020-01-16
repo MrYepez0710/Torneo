@@ -84,7 +84,8 @@ CREATE TABLE jugador (
     id          SERIAL PRIMARY KEY,
     nombre      VARCHAR(50) NOT NULL,
     usuario     VARCHAR(50) NOT NULL UNIQUE,
-    password  VARCHAR(20) NOT NULL
+    password  VARCHAR(20) NOT NULL,
+    rol       INTEGER NOT NULL
 );
 
 CREATE TABLE participante (
@@ -125,7 +126,7 @@ DROP TABLE IF EXISTS Jugador;
 DROP TABLE IF EXISTS tipo_torneo;
 CREATE TABLE calendario (id SERIAL PRIMARY KEY,nro_fecha VARCHAR(50) NOT NULL, equipo_local INTEGER NOT NULL,equipo_visitante INTEGER NOT NULL, resultado_local INTEGER NOT NULL, resultado_visitante  INTEGER NOT NULL,id_torneo INTEGER NOT NULL);
 CREATE TABLE equipo (id SERIAL PRIMARY KEY,nombre  VARCHAR(50) NOT NULL, escudo  CHAR(4096));
-CREATE TABLE jugador (id SERIAL PRIMARY KEY,nombre VARCHAR(50) NOT NULL, usuario VARCHAR(50) NOT NULL UNIQUE, password  VARCHAR(20) NOT NULL);
+CREATE TABLE jugador (id SERIAL PRIMARY KEY,nombre VARCHAR(50) NOT NULL, usuario VARCHAR(50) NOT NULL UNIQUE, password  VARCHAR(20) NOT NULL, rol INTEGER NOT NULL);
 CREATE TABLE participante (id SERIAL PRIMARY KEY, equipo INTEGER NOT NULL, jugador INTEGER NOT NULL, id_torneo  INTEGER NOT NULL);
 CREATE TABLE tipo_torneo (id SERIAL PRIMARY KEY, nombre VARCHAR(100) NOT NULL, descripcion  VARCHAR(150) NOT NULL);
 CREATE TABLE torneo (id SERIAL PRIMARY KEY,nombre_torneo VARCHAR(50) NOT NULL UNIQUE, tipo_torneo INTEGER NOT NULL, cantidad_equipos  INTEGER NOT NULL, estado CHAR(1));
