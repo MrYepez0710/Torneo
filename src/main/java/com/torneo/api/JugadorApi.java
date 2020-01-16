@@ -45,7 +45,7 @@ public class JugadorApi {
 		return mapper.map(player, JugadorResponse.class);
 	}
 	
-	@RequestMapping(value="/listarJugadores", method=RequestMethod.POST)
+	@RequestMapping(value="/listarJugadores", method=RequestMethod.GET)
 	public List<JugadorResponse> listarJugadores(){
 		System.out.println("JugadorApi::ingresoJugador");
 		List<Jugador> jugadores = jugadorService.listarJugadores(); 
